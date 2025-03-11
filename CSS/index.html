@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>index CSS</title>
+        <!-- internal CSS -->
+        <style>
+            /* syntax:
+            selector{
+                property1: value;
+                property2: value;
+            } */
+            table,tr,td,th{
+                    border: 1px solid black;
+                }
+            h1{/*This is element selector*/
+                color: crimson;
+                margin-top: 20px;
+                margin-bottom:50px;
+                padding: 20px;
+                padding-left: 100px;
+                /*  syntax for shorthand property 
+                margin:top rigth bottom left -clockwise direction*/
+                margin:50px 30px 40px 20px;
+                padding:10px 20px 30px 40px;
+                /* oppsite directions:top-bottom & left-rigth */
+                margin:50px 100px;
+                /* top right-left bottom */
+                margin:30px 60px 90px;
+                padding:10px 20px 40px;
+               
+                /* padding:  */
+                border: 10px solid black;
+            }
+            p{/*This is element selector*/
+                color:crimson;
+                
+            }
+    
+            th{
+                color: black;
+            }
+            /* rgb stands for red,green ,blue, value can be between 0 to 255 */
+            /* td{ color: rgb(100, 36, 160); */
+            /* rgba method where a stands for alpha, value varies from 0 tp 1in decimal numbers */
+            /* td{ color: rgba(100, 155, 55, 0.911)
+            } */
+             /* hex code - Hexadecimal code */
+             th{
+                color: #992175;
+                background-color: rgb(156, 209, 223);
+            }
+            td{
+                color: #992175;
+                background-color: azure;
+                border-radius:5px;
+            }
+            table{
+                border-width: 5px;
+                border-color: brown;
+                /* solid, dashed, ridge, groove,double, dotted */
+                border-style: dashed;
+                /* shorthand property */
+                /* border: width style color */
+                border: 10px groove yellow;
+                border-radius: 10px; 
+                /* we can apply border for 4 directions
+                They are top, bottom, right, left */
+                border-bottom: 10px dotted gold;
+                border-left: 10px dashed rgb(104, 91, 17);
+                border-top-right-radius: 50x;
+                border-bottom-left-radius:25px ;
+                /* To make all borders merged into single border */
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- There are 3 types of CSS in web development
+        Internal CSS, External CSS and Inline CSS -->
+        <h1>This is a Heading.</h1>
+        <h1>This ia a second heading</h1>
+        <p>This is a paragragh</p>
+        <!-- we have different type of selectors in CSS
+        They are: Element selector, Class selector, ID selector
+        -->
+        <!-- Element selector includes all HTMLtags -->
+        <table>
+            <tr>
+                <th>Table heading</th>
+                <th>Table heading</th>
+                <th>Table heading</th>  
+            </tr>
+            <tr>
+                <td>Table body 11</td>
+                <td>Table body 12</td>
+                <td>Table body 13</td>   
+            </tr>
+            <tr>
+                <td>Table body 21</td>
+                <td>Table body 22</td>
+                <td>Table body 23</td>  
+            </tr>
+        </table> 
+    </body>
+</html>
