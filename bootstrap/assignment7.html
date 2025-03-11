@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-7</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <style>
+        .flex-container{
+            border: 2px solid black;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+     <form class="container row p-4 border border-2 my-3">
+        <h1>Registration Form</h1>
+            <div class="mb-3 col-md-6">
+                <label for="usn">USN:</label>
+                <input type="text" name="usn" id="usn" value="4GL21EC015" readonly>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="first_name">first_name:</label>
+                <input type="text " name="first_name" id="first_name"maxlength="10" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="middle_name">mid_name:</label>
+                <input type="text" name="midddle_name"id="middle_name">
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="last_name">last_name:</label>
+                <input type="text" name="last_name"id="last_name">
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="email_id">Email_id:</label>
+                <input type="email"name="email"id="email_id"placeholder="Enter your emai_id" autofocus><br><br>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="password">password:</label>
+                <input type="password"name="password"id="password" placeholder="Enter 8 digit password"><br><br>
+            </div>
+        <label for="phone_number">Phone Number:</label>
+         <input type="tel" name="phone_number" id="phone_number"maxlength="10" value="+91-8618566422" disabled><br><br>
+        <label class="form-control" for="age">Age</label>
+         <input type="number" name="age" id="age"min="20" step="5"><br><br>
+        <label for="dob">DOB</label>
+         <!-- <input type="date" name="dob" id="dob"min="2000-01-01"><br><br>  -->
+         <input type="date" name="dob" id="dob"max="2025-02-19"><br><br> 
+
+        <label for="birthday_week">Birthday week</label>
+         <input type="week" name="birthday_week" id="birthday_week"><br><br>
+        <label for="birthday_month">Birthday month</label>
+         <input type="month" name="birthday_month" id="birthday_month"><br><br>
+        <label for="birth_time">birth time</label>
+         <input type="time" name="birth_time" id="birth_time"><br><br>
+        <label for="dob_time">DOB with birthday Time:</label>
+         <input type="datetime-local" name="dob_time" id="dob_time"><br><br>
+
+        <label for="gender">Gender:</label>
+         <input type="radio" name="gender "id="male" value="M">
+        <label for="male">Male:</label>
+         <input type="radio" name="gender "id="female" value="F">
+        <label for="female">Female:</label>
+         <input type="radio" name="gender "id="others" value="O">
+        <label for="others">others:</label><br><br>
+
+        <label for="subjects">Favourite subjects:</label>
+         <input type="checkbox" name="Subject 1 "id="Mathes" value="Maths">
+        <label for="maths">Mathematics:</label>
+         <input type="checkbox" name="Subject 2 "id="Social science" value="Social science">
+        <label for="Social science">Social science:</label>
+         <input type="checkbox" name="Subject 3"id=" science" value="Science">
+        <label for="science">science:</label><br><br>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Agree for Terms and Conditions</label>
+        </div>
+        <div class="d-flex justify-content-start">
+            <button type="reset" class="btn btn-danger mx-2">Reset</button>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+        </form>
+    </div>
+
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
