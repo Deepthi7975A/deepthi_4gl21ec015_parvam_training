@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">This is a heading</h1>
+    <!-- this is function call -->
+    <p id="para" onclick="changeText()">This is a paragraph changes when cliked</p>
+    <p id="para4" ondblclick="changeText4()">This is a paragraph changes when double cliked</p>
+    <p id="para1" onmouseover="changeText1()">This is a  paragraph changes when mouse over</p>
+    <p id="para2" onmouseout="changeText2()">This is a  paragraph changes when mouse out</p>
+    <p id="para3" onkeydown="changeText3()">This is a  paragraph changes when on load</p>
+    <input type="text" id="field" value="Field Value">
+    <p id="print-text"></p>
+    <script>
+        const heading = document.getElementById("heading");
+        heading.addEventListener("click",function(){
+            heading.innerHTML ="Heading  changed because you've cliked";
+        });
+        heading.addEventListener("dblclick",function(){
+            heading.innerHTML =" Main Heading because you've cliked twice";
+        });
+
+        function changeText(){ // this is function declaration
+            const para = document.getElementById("para");//function defenition
+
+            para.innerHTML = "This para was changed by DOM using function";
+        }
+        function changeText1(){ // this is function declaration
+            const para = document.getElementById("para1");//function defenition
+
+            para.innerHTML = "mouseover";
+        }
+        function changeText2(){ // this is function declaration
+            const para = document.getElementById("para2");//function defenition
+
+            para.innerHTML = "on mouseout";
+        }
+        function changeText3(){ // this is function declaration
+            const para = document.getElementById("para3");//function defenition
+
+            para.innerHTML = "onload";
+        }
+        function changeText4(){ // this is function declaration
+            const para = document.getElementById("para4");//function defenition
+
+            para.innerHTML = "Dowble Clicked";
+        }
+
+    
+            const field = document.getElementById("field");
+            field.addEventListener("keydown", function(event){
+                const printText = document.getElementById("print-text");
+                printText.innerHTML = `You've clicked: ${event.key}`;
+            })
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form Validation JS</title>
+  <style>
+    form {
+      background-image: url(../media/flower-8342448_1280.jpg);
+      color: rgb(157, 215, 219);
+      padding: 20px;
+      font-weight: bold;
+    }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="display-3 text-center bg-warning p-2 mt-2">Registration Form</h1>
+    <!-- Name, Father Name, Mother Name, DOB, Gender, Email-ID, Phone Number, Temporary address, Permanent address, (city, state, country, pincode), Adhar Number
+    Education Details: 10th std(School, Education Board, Percentage, Year of completion)
+                        12th std / PUC / Diploma(College, Education Board, Percentage, Year of Completion)
+    Admission Details: Branch, Admission Quota, Fees, Facilities(Canteen, Hostel, Bus, Soprts) -->
+    <form id="registration_form" onsubmit="return validateForm(event)">
+      <h1 class="display-5 text-center bg-secondary p-2 mt-2 text-light">Basic Details</h1>
+      <div class="mb-3">
+        <label for="student_name" class="form-label">Student Name</label>
+        <input type="text" class="form-control" id="student_name" placeholder="Enter your name">
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="father_name" class="form-label">Father name</label>
+            <input type="text" class="form-control" id="father_name" placeholder="Enter your Father name">
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="mother_name" class="form-label">Mother name</label>
+            <input type="text" class="form-control" id="mother_name" placeholder="Enter your Mother name">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="dob" class="form-label">Date of birth</label>
+            <input type="date" class="form-control" id="dob" placeholder="Enter your Date of birth">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <div class="d-flex justify-content-start gap-3">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                <label class="form-check-label" for="male">
+                  Male
+                </label>
+              </div>
+              <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+              <label class="form-check-label" for="female">
+                Female
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="Email-ID" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="Email-ID" placeholder="Enter your email-Id">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="phone_number" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone_number" placeholder="Enter your Phone Number">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="temp_address" class="form-label">Temporary Address</label>
+            <textarea class="form-control" id="temp_address" rows="5"></textarea>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="permanent_address" class="form-label">Permanent Address</label>
+            <textarea class="form-control" id="permanent_address" rows="5"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" id="city" placeholder="Enter your City">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="state" class="form-label">state</label>
+            <select class="form-select" aria-label="Select your state">
+              <option value="KA">Karnataka</option>
+              <option value="TN">Tamil Nadu</option>
+              <option value="KL">Kerala</option>
+              <option value="MH">Maharashtra</option>
+              <option value="TS">Telangana</option>
+              <option value="AP">Andhra Pradesh</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="Country" class="form-label">Country</label>
+            <input type="text" class="form-control" id="Country" placeholder="Enter your Country">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="Pincode" class="form-label">Pincode</label>
+            <input type="number" class="form-control" id="Pincode" placeholder="Enter your Pincode">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="aadhar_number" class="form-label">Aadhar Number</label>
+            <input type="number" class="form-control" id="aadhar_number" placeholder="Enter your aadhar Number">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="upload_photo" class="form-label">Upload Photo</label>
+            <input type="file" class="form-control" id="upload_photo">
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h1 class="display-5 text-center bg-secondary p-2 mt-2 text-light">Educational Details</h1>
+      <h2>10th standard / SSLC</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="school_name" class="form-label">School Number</label>
+            <input type="text" class="form-control" id="school_name" placeholder="Enter your School Number">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="education_board" class="form-label">Education Board</label>
+            <input type="text" class="form-control" id="education_board" placeholder="Enter your Education Board">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="percentage" class="form-label">Percentage</label>
+            <input type="number" class="form-control" id="percentage" placeholder="Enter your Percentage">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="Year of passing" class="form-label">Year of passing</label>
+            <input type="month" class="form-control" id="Year of passing" placeholder="Enter your Year of passing">
+          </div>
+        </div>
+      </div>
+      <h2>12th standard / PUC / Diplama</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="collage_name" class="form-label">collage Number</label>
+            <input type="text" class="form-control" id="collage_name" placeholder="Enter your collage Number">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="pu_education_board" class="form-label">Education Board</label>
+            <input type="text" class="form-control" id="pu_education_board" placeholder="Enter your Education Board">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="pu_percentage" class="form-label">Percentage</label>
+            <input type="number" class="form-control" id="pu_percentage" placeholder="Enter your Percentage">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="pu_Year of passing" class="form-label">Year of passing</label>
+            <input type="month" class="form-control" id="pu_Year of passing" placeholder="Enter your Year of passing">
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h1 class="display-5 text-center bg-secondary p-2 mt-2 text-light">Admission Details</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="branch" class="form-label">Branch</label>
+            <div class="d-flex justify-content-start gap-3">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="branch" id="ece" value="ece">
+                <label class="form-check-label" for="ece">
+                  ECE
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="branch" id="cse" value="cse">
+                <label class="form-check-label" for="cse">
+                  CSE
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="branch" id="mech" value="mech">
+                <label class="form-check-label" for="mech">
+                  Mechanical
+                </label>
+              </div>
+              <input class="form-check-input" type="radio" name="branch" id="civil" value="civil">
+              <label class="form-check-label" for="civil">
+                Civil
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="branch" class="form-label">Admission Quota</label>
+            <div class="d-flex justify-content-start gap-3">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="admission_quota" id="cet" value="cet">
+                <label class="form-check-label" for="cet">
+                  CET
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="admission_quota" id="management" value="management">
+                <label class="form-check-label" for="management">
+                  Management
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="fees" class="form-label">Fees</label>
+            <input type="number" class="form-control" id="fees" placeholder="Enter your fees">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="Facilities" class="form-label">Facilities</label>
+            <div class="d-flex justify-content-start gap-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="canteen" value="canteen">
+                <label class="form-check-label" for="canteen">
+                  Canteen
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="hostel" value="hostel">
+                <label class="form-check-label" for="hostel">
+                  Hostel
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="transportation" value="transportation">
+                <label class="form-check-label" for="transportation">
+                  Transportation
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="library" value="library">
+                <label class="form-check-label" for="library">
+                  Library
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="sports" value="sports">
+                <label class="form-check-label" for="sports">
+                  Sports
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="agree_terms">
+        <label class="form-check-label" for="agree_terms">Agree to the Terms and Conditions</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="validationV2.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is a heading</h1>
+    <h1>This is one more heading</h1>
+    <p>This is a paragraph</p>
+    <h2 class="heading-2">This is another heading</h2>
+    <h2 class="heading-2">This is a third heading</h2>
+    <p class="heading-2">This is a first heading</p>
+    <p id="imp">This is important text</p>
+    <script>
+        //Selectors reference using ID
+        const important = document.getElementById("imp");
+        console.log(important);
+
+        important.textContent = "This is very important";
+
+        //Selectors reference using Class name
+        const heading2 = document.getElementsByClassName("heading-2");
+        heading2[0].innerHTML = "This is second heading";
+        console.log(heading2);
+
+        // const heading2 = document.getElementsByClassName("heading-2");
+        heading2[1].innerHTML = "This is another third heading";
+        
+        //Selector refernce using Tagname
+        const heading = document.getElementsByTagName("h1");
+        heading[0].style.color = "crimson";
+        console.log(heading);
+        // Selectors using QuerrySelector
+        const secondheading = document.querySelector(".heading-2");
+        secondheading.style.backgroundColor = "aqua";
+        console.log(secondheading);
+        const firstheading = document.querySelector("h1");
+        firstheading.style.fontSize="50px";
+        console.log(firstheading);
+
+        const allheading = document.querySelectorAll("h1");
+        allheading[0].style.backgroundColor = "grey";
+        console.log(allheading);
+
+        const allClassess = document.querySelectorAll(".heading-2");
+        console.log(allClassess);
+        allClassess[1].style.padding = "50px";
+        allClassess[2].style.border= "1px solid black";
+        // To apply Css properties
+        // just change it from hypens to camel case
+        // Ex: background-color => backgroundColor
+        // Ex: text-align => textAlign
+        // Ex: padding-right => paddingRight
+    </script>
+</body>
+</html>

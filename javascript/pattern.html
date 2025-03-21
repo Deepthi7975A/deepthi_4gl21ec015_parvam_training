@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //  star pattern using javascript
+         let num = 5;
+            let pattern = "";    //pattern string
+            if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <= num; i++) {    //first 'for loop' for horizontal lines
+        for (let j = 1; j <= i; j++) {      //second 'for loop' to print star
+            pattern += "A ";    //adding * to pattern string
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <=num; i++) {    //first 'for loop' for horizontal lines
+        for (let j = 1; j <= (num-i); j++) {    //second 'for loop' to add 'spaces' before pattern
+            pattern += "  ";
+        }
+
+        for (let k = 1; k <= i; k++) {      //third 'for loop' to add * to pattern string
+            if (k==1 || k==i || i==num) {   //third loop condition to make pattern hollow
+                pattern += "B ";    //adding outer * to pattern string
+            }
+            else{
+                pattern += "  ";    //adding spaces between * to pattern string
+            }
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <= num; i++) {     //first 'for loop' for horizontal lines
+        for (let j = 1; j <= (num - i); j++) {    //second 'for loop' to add 'spaces' before pattern
+            pattern += "  ";
+        }
+        for (let k = 1; k <= ((2 * i) - 1); k++) {      //third 'for loop' to add * to pattern string
+            pattern += "C ";
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+if (num > 1){
+    for(let i=1; i <= num; i++){
+        for (let j= 1; j <= (num - i); j++){
+            pattern += "   ";
+        }
+        for (let k = 1; k<=((2 * i) -1); k++){
+            if (k==1 || k==((2*i)-1) || i==num){
+                pattern += "D  ";
+            }else {
+                pattern += "   ";
+            }
+        }
+        pattern += "\n";
+    }
+    console.log(pattern);
+}else{
+    pattern = "Number must be greater than 1 to print star pattern"
+}
+
+
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <= num; i++) {    //first 'for loop' for horizontal lines
+        for (let j = 0; j <= (num-i); j++) {    //second 'for loop' for opposite pattern
+            if (j==0 || j==(num-i) || i==1) {   //condition to make pattern hollow
+                pattern += "E ";
+            } else {
+                pattern += "  ";    // spaces to make pattern hollow
+            }
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = num; i >=1; i--) {    //first 'for loop' for horizontal lines  and reversed pattern
+        for (let j = 1; j <= (num - i); j++) {      //second 'for loop' to add 'spaces' before pattern
+            pattern += "  ";
+        }
+        for (let k = 1; k <= ((2 * i) - 1); k++) {      //third 'for loop' to add * to pattern string
+            pattern += "F ";
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <=num; i++) {    //first 'for loop' for horizontal lines 
+        for (let j = 1; j <= (num); j++) {      //second 'for loop' to add * to pattern string
+            pattern += "* ";
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <=num; i++) {    //first 'for loop' for horizontal lines
+        for (let j = 1; j <= (num); j++) {      //second 'for loop' to add * to pattern string
+            if (i==1 || i==num || j==1 || j==num) {     //condition to make pattern hollow
+                pattern += "* ";    //adding outer * to pattern string
+            } else {
+                pattern += "  ";    //adding spaces between * to pattern string to make it hollow
+            }
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+   
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <=num; i++) {    //first 'for loop' for horizontal lines 
+        for (let j = 1; j <= (num); j++) {      //second 'for loop' to add * to pattern string
+            if (i==1 || i==num || j==1 || j==num || i==j || j==(num-i+1)) {     //condition to add * to pattern string
+                pattern += "* ";    //adding * to pattern string
+            } else {
+                pattern += "  ";  //adding spaces between * to pattern string to make it crossed
+            }
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <= num; i++) {    //first 'for loop' for upward pyramid
+        for (let j = 1; j <= ((num) - i); j++) {    //second 'for loop' to add 'spaces' before upward pyramid
+            pattern += "  ";
+        }
+        for (let k = 1; k <= ((2 * i) - 1); k++) {      //third 'for loop' to add * to upward pyramid
+            pattern += "* ";
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    for (let i = num-1; i >=1; i--) {       //fourth 'for loop' for downward pyramid
+        for (let j = 1; j <= ((num) - i); j++) {    //fifth 'for loop' to add 'spaces' before downward pyramid
+            pattern += "  ";
+        }
+        for (let k = 1; k <= ((2 * i) - 1); k++) {      //sixth 'for loop' to add * to downward pyramid
+            pattern += "* ";
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <= num; i++) {    //first 'for loop' for upward pyramid
+        for (let j = 1; j <= ((num) - i); j++) {    //second 'for loop' to add 'spaces' before upward pyramid
+            pattern += "  ";
+        }
+        for (let k = 1; k <= ((2 * i) - 1); k++) {      //third 'for loop' to add * to upward pyramid
+            if (k==1 || k==((2 * i) - 1)) {     //condition to make upward pyramid hollow
+                pattern += "* ";    //adding outer * to upward pyramid
+            } else {
+                pattern += "  ";    //adding 'spaces' between * in upward pyramid
+            }
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    for (let i = num-1; i >=1; i--) {       //fourth 'for loop' for downward pyramid
+        for (let j = 1; j <= ((num) - i); j++) {    //fifth 'for loop' to add 'spaces' before downward pyramid
+            pattern += "  ";
+        }
+        for (let k = 1; k <= ((2 * i) - 1); k++) {      //sixth 'for loop' to add * to downward pyramid
+            if (k==1 || k==((2 * i) - 1)) {     //condition to make downward pyramid hollow
+                pattern += "* ";    //adding outer * to downward pyramid
+            } else {
+                pattern += "  ";    //adding 'spaces' between * in downward pyramid
+            }
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+    </script>
+    <script>
+        var Num = 10, second = 20;
+        console.log('The value of \'Num\' is ' +  Num  + ". The second value is " +  second);
+        console.log(`The value of 'Num' is ${Num}. The "second" value is ${second}.`);
+
+
+        //  star pattern using javascript
+       
+            if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <= num; i++) {    //first 'for loop' for horizontal lines
+        for (let j = 1; j <= i; j++) {      //second 'for loop' to print star
+            pattern += `${i}`;    //adding * to pattern string
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+    // let num = 5;
+    // let pattern = "";
+    // step 1: i= 1, 1 <= 5 - T
+    // step 2: j= 1, 1 <=1 - T
+                // 1
+    // step 3: j= 2, 2 <=1 - F
+                // 1
+    //  -------------------------
+    // step 4: i= 2, 2 <= 5 - T
+    // step 5: j= 1, 1 <=2 - T
+                // 1
+    // step 6: j= 2, 2 <=2 - T
+                // 1
+                // 2  
+    //  step 7: j= 3, 3 <=2 -F
+                // 1
+                // 2  2
+    //  -------------------------
+    // step 8: i= 3, 3 <= 5 - T
+    //step 9: j= 1, 1 <=3 - T
+                // 1
+                // 2 2
+    // step 10: j= 2, 2 <=3 - T
+                // 1
+                // 2  2
+                // 3
+    //step 11:j= 3, 3 <=3 -T
+                // 1
+                // 2  2
+                // 3  3  
+    // step 12: j= 4, 4 <=3 -F
+                // 1
+                // 2  2
+                // 3  3  3
+    //  -------------------------
+    // step 13: i= 4, 5 <= 5 - T
+    //step 14: j= 1, 1 <=4 - T
+                // 1
+                // 2  2
+                // 3  3  3
+                // 4
+    // step 15: j= 2, 2 <=4 - T
+                // 1
+                // 2  2
+                // 3  3  3
+                // 4   4
+    //step 16:j= 3, 3 <=4 -T
+                // 1
+                // 2  2
+                // 3  3  3
+                // 4  4  4
+    // step 17: j= 4, 4 <=4 -T
+    //             1
+    //             2  2
+    //             3  3  3
+    //             4  4  4  4
+    //  -------------------------
+    // step 18: i= 5, 5 <= 5 - T
+    //step 19: j= 1, 1 <=5 - T
+                // 1
+                // 2  2
+                // 3  3  3
+                // 4  4  4
+                // 5
+    // step 20: j= 2, 2 <=5 - T
+                // 1
+                // 2  2
+                // 3  3  3
+                // 4  4  4
+                // 5  5
+    //step 21:j= 3, 3 <=5 -T
+                // 1
+                // 2  2
+                // 3  3  3
+                // 4  4  4
+                // 5  5  5
+    // step 22: j= 4, 4 <=5 -T
+                // 1
+                // 2  2
+                // 3  3  3
+                // 4  4  4  4
+                // 5  5  5  5
+    // step 23: j= 5, 4 <=5 -T
+                // 1
+                // 2  2
+                // 3  3  3
+                // 4  4  4  4
+                // 5  5  5  5 5
+    // step 24: j= 6, 4 <=5 -F
+                // 1
+                // 2  2
+                // 3  3  3
+                // 4  4  4  4
+                // 5  5  5  5 5
+    //  -------------------------
+   
+    if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <= num; i++) {     //first 'for loop' for horizontal lines
+        for (let j = 1; j <= (num - i); j++) {    //second 'for loop' to add 'spaces' before pattern
+            pattern += "  ";
+        }
+        for (let k = 1; k <= ((2 * i) - 1); k++) {      //third 'for loop' to add * to pattern string
+            pattern += "C ";
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+   
+// let num = 5;
+// let pattern = "";
+// step 1: i=1
+// inner loop j runs 5 times
+// step 2: j= 0 to j=4
+//      * * * * *\n
+// step 3: i=2
+// inner loop j runs 4 times
+//step 4: j=0 to j=3
+//       * * * * * \n
+//       * * * * \n
+// step 5: i=3
+// inner loop j runs 3 times
+//step 6: j=0 to j=2
+//       * * * * * \n
+//       * * * * \n
+//       * * * \n
+    
+// step 7: i=4
+// inner loop j runs 2 times
+//step 8: j=0 to j=1
+//       * * * * * \n
+//       * * * * \n
+//       * * * \n
+//       * *  \n
+// step 9: i=5
+// inner loop j runs 1 times
+//step 10: j=0 
+//       * * * * * \n
+//       * * * * \n
+//       * * * \n
+//       * *  \n
+//       *   \n
+   
+
+if (num > 1) {      //no star pattern for 0 or negative numbers.
+    for (let i = 1; i <=num; i++) {    //first 'for loop' for horizontal lines
+        for (let j = 1; j <= (num-i); j++) {    //second 'for loop' to add 'spaces' before pattern
+            pattern += "  ";
+        }
+
+        for (let k = 1; k <= i; k++) {      //third 'for loop' to add * to pattern string
+            if (k==1 || k==i || i==num) {   //third loop condition to make pattern hollow
+                pattern += "B ";    //adding outer * to pattern string
+            }
+            else{
+                pattern += "  ";    //adding spaces between * to pattern string
+            }
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+
+// let num = 5;
+// let pattern = "";
+// step 1: i=1
+// step 2: j=1 j <=1 - T
+//            *\n
+// step 3: i=2
+// step 4: j=1 j <=2 - T
+//         *\n
+//         * \n *
+// step 5: j=2 j <=2 - T
+//         *\n
+//         * \n *
+//         * \n * *
+// step 6: i=3
+// step 7: j=1 j <=3 - T
+//         *\n
+//         * \n * * \n *
+// step 8: j=2 j <=3 - T
+//         *\n
+//         * \n *
+//         * \n * * \n *
+// step 9: j=3 j <=3 - T
+//         *\n
+//         * \n *
+//         * \n * * \n * \n
+// step 10: i=4
+// step 11: j=1 j <=4 - T
+//         *\n
+//         * \n * * \n * * \n *
+// step 12: j=2 j <=4 - T
+//         *\n
+//         * \n *
+//         * \n * * \n * * \n *
+// step 13: j=3 j <=4 - T
+//         *\n
+//         * \n *
+//         * \n * * \n *  *\n *
+// step 14: j=4 j <=4 - T
+//         *\n
+//         * \n *
+//         * \n * * \n *  *\n *
+//         * \n * * \n *  *\n * * \n
+// step 15: i=5
+// step 16: j=1 j <=5 - T
+//         *\n
+//         * \n * * \n * * \n *
+// step 17: j=2 j <=5 - T
+//         *\n
+//         * \n *
+//         * \n * * \n * * \n *
+// step 18: j=3 j <=5 - T
+//         *\n
+//         * \n *
+//         * \n * * \n *  *\n *
+// step 19: j=4 j <=5 - T
+//         *\n
+//         * \n *
+//         * \n * * \n *  *\n *
+//         * \n * * \n *  *\n * * \n
+
+
+
+        if (num > 1) {      //no star pattern for 0 or negative numbers.
+          for (let i = 1; i <= num; i++) {    //first 'for loop' for horizontal lines
+            for (let j = 0; j <= (num-i); j++) {    //second 'for loop' for opposite pattern; see loop condition
+            pattern += `${i} `;
+        }
+        pattern += "\n";    //new line after row completion
+    }
+   
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+         // For i value pattern
+        // num = 5, pattern = ""
+        // step1: 5 > 1 - T
+            //  i= 1, 1<= 5 - T
+            // j= 0 , 0<= (5-1)= 4-T
+            // 1
+        // step:2 j = 1, 1<= 4-T
+            // 1 1
+        // step:3 j= 2, 2 <= 4-T
+            //1 1 1
+        // step:4 j=3, 3 <= 4-T
+            // 1  1  1  1
+        // step:5 j=4, 4 <=4 - T
+            // 1  1  1  1  1
+        // step:6 j=5, 5<= 4 -F
+            //1  1  1  1  1
+        //----------------------------- 
+         // step:7  i= 2, 2<= 5 - T
+            // j= 0 , 0<= (5-2)= 3 -T
+            // 1  1  1  1  1
+            // 2
+        // step:8 j = 1, 1<= 3-T
+            // 1  1  1  1  1
+            // 2  2
+        // step:9 j= 2, 2 <= 3-T
+            // 1  1  1  1  1
+            // 2  2  2
+        // step:10 j=3, 3 <= 3-T
+            //  1  1  1  1  1
+            //  2  2  2  2
+        // step:11 j=4, 4 <= 3 - F
+            // 1  1  1  1  1  
+            // 2  2  2  2 
+        //----------------------------- 
+         // step:12  i= 3, 3<= 5 - T
+            // j= 0 , 0<= (5-3)= 2 -T
+            // 1  1  1  1  1
+            // 2  2  2  2
+            // 3
+        // step:13 j = 1, 1<= 2-T
+            // 1  1  1  1  1
+            // 2  2  2  2
+            // 3  3
+        // step:14 j= 2, 2 <= 2-T
+           // 1  1  1  1  1
+           // 2  2  2  2
+           // 3  3  3
+        // step:15 j=3, 3 <= 2-F
+            //  1  1  1  1  1
+            //  2  2  2  2
+            //  3  3  3
+        //----------------------------- 
+         // step:16 i= 4, 4<= 5 - T
+            // j= 0 , 0<= (5-4)= 1-T
+            // 1  1  1  1  1
+            // 2  2  2  2
+            // 3  3  3
+            // 4
+        // step:17 j = 1, 1<= 1-T
+            // 1  1  1  1  1
+            // 2  2  2  2
+            // 3  3  3
+            // 4  4
+        // step:18 j= 2, 2 <= 1-F
+           // 1  1  1  1  1
+           // 2  2  2  2
+           // 3  3  3
+           // 4  4
+        //----------------------------- 
+         // step:19 i= 5, 5<= 5 - T
+            // j= 0 , 0<= (5-5)= 0-T
+            // 1  1  1  1  1
+            // 2  2  2  2
+            // 3  3  3
+            // 4  4
+            // 5  5
+        // step:20 j = 1, 1<= 0-F
+            // 1  1  1  1  1
+            // 2  2  2  2
+            // 3  3  3
+            // 4  4
+            // 5
+
+    if (num > 1) {      //no star pattern for 0 or negative numbers
+       for (let i = 1; i <= num; i++) {    //first 'for loop' for horizontal lines
+          for (let j = 1; j <= i; j++) {      //second 'for loop' to print star and space between them
+            if (j==1 || j==i || i==num) {   //condition to make it hollow
+                pattern += "* ";
+            }
+            else{
+                pattern += "  ";
+            }
+        }
+        pattern += "\n";    //new line after row completion
+    }
+    console.log(pattern);   //printing star to console
+   
+   
+}
+else {
+    pattern = "Number must be greater than 1 to print star pattern.";
+}
+
+
+//num = 5, pattern = ""
+//step1:  5 > 1 - T
+          // i=1, 1<=5,
+          // j=1, 1<=1 -T
+          // *
+// Step2: i=1, 2<=1 - F
+          // *  
+//---------------------------          
+// Step3: i=2, 2<=5
+          // j=1, 1<=2 -T
+          // *
+          // *
+// Step4: j=2, 2<=2 -T
+          // * 
+          // *  *
+//Step5: j=3, 3<=2 -F 
+          // *
+          // *  *
+//-----------------------------   
+// Step6: i=3, 3<=5 -T
+          // j=1, 1<=3 -T
+          // *
+          // *  *   
+          // * 
+// Step7: j=2,  2<=3
+          // 2==1 || 1==3 || 3==5 -F  
+          // *
+          // * *
+          // *   
+// Step8: j=3, 3<=3 - T
+          // 3==1 || 3==3 || 3==5 - T (If any one condition satisfied)   
+          // *
+          // * *
+          // *   *  
+// Step9: j=4, 4<=3 -F                    
+//-----------------------------   
+// Step10: i=4, 4<=5 -T
+          // j=1, 1<=4 -T
+          // *
+          // * *
+          // *   * 
+          // *
+// Step11: j=2,  2<=4
+          // 2==1 || 2==3 || 4==5 -F  
+          // *
+          // * *
+          // *   *  
+          // *    
+// Step12: j=3, 3<=4- T
+          // 3==1 || 3==4 || 4==5 - F   
+          // *
+          // * *
+          // *   *   
+          // *   
+// Step13: j=4, 4<=4 -T    
+          // 3==1 || 4==4 || 4==5 -T 
+          // *
+          // * *
+          // *   *   
+          // *     *
+// Step14: j=5, 5<=4 - F                
+//-----------------------------   
+// Step10: i=5, 5<=5 -T
+          // j=1, 1<=5 -T
+          // *
+          // * *
+          // *   *   
+          // *     *
+          // *
+// Step11: j=2,  2<=5
+          // 2==1 || 2==5 || 5==5 -T 
+          // *
+          // * *
+          // *   *   
+          // *     *  
+          // * *
+// Step12: j=3, 3<=5- T
+          // 3==1 || 3==5 || 5==5 - T  
+          // *
+          // * *
+          // *   *   
+          // *     * 
+          // * * *
+// Step13: j=4, 4<=5 -T    
+          // 3==1 || 4==4 || 5==5 -T 
+          // *
+          // * *
+          // *   *   
+          // *     *
+          // * * * *
+// Step14: j=5, 5<=5 - T  
+          // 3==1 || 4==4 || 5==5 -T  
+          // *
+          // * *
+          // *   *   
+          // *     *
+          // * * * * *          
+
+    // Rhombus Square Star Pattern
+  for(i=1; i<=5; i++){
+    for(j=5; j>i; j--){
+        document.write(" &nbsp;&nbsp; ");
+    }
+    for(k=1; k<=((i*2)-1); k++){
+        if(i==1|| i==5||k==1 || k==((i*2)-1)){
+            document.write(" * ");
+        }else
+        document.write(" &nbsp;&nbsp; ");
+    }
+        document.write("<br>");
+  }
+    
+
+
+                
+    </script>
+</body>
+</html>
