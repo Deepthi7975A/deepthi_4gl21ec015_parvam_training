@@ -1,0 +1,200 @@
+I want to inatall python in my system
+open command prompt and run:
+python --version
+
+
+if not found,  then install the python from official website
+https://www.python.org/downloads
+
+while installing, make sure to check and tick
+add python .exe to path
+Again check wheather python is installed or not:
+python --version
+
+After python Installation, install the virtual environment package:
+pip install virtualenv
+
+Make a new folder for your project, 
+then open a new terminal in the folder, then switch form powershell to command prompt version in terminal
+virtualenv environment_name
+or 
+python-m virtualenv environment_name
+Ex: python-m virtualenv venv3124
+
+Then you need to activate the new environment
+venv3124\Scripts\activate
+
+install Mysql Client,
+pip install Mysqlclient
+
+install Django
+pip install django==4.2
+
+To create new Django project:
+django-admin start project project_name
+EX: c django-admin startproject employee_app
+
+To work on the project:
+cd employee_app
+ 
+Strat the Django app:
+python manage.py runserver
+
+To stop the django project:
+Click on Ctrl + C
+
+Default port number of django: 8000
+where is it running: localhost(127.0.0,1)
+How it is running: Using Apache Server(Local server)
+
+To make a new application /module:
+python manage.py startapp app_name
+Ex: python manage.py startapp employee
+
+After Making the new application we need to register the main application's settings.py
+In the Installed app
+
+Next route the pages at url.py of the project
+Path('', include('employee.urls')), #linking the urls of new app where the app is launched
+
+Then create the new file urls.py in the app:
+from django.urls import path
+from . import views
+
+urlspatterns = [
+    path('', views.show_employees, name='employee_list'),  
+]
+
+Explanation: 'route/path', views.method_name, name='name_of_the_route'
+
+Next configure in the views.py:
+from django.shortcuts import render
+
+# create views here.
+def show_employees(request):
+    return render(request, 'employee/emp_list.html')
+
+This cod can be cloned and change the module name
+
+Then make the New folder Templates
+in that make the folder employee
+Then start creating the files:
+emp.list.html
+header.html - it includes the navbar &  css and html bootstrap links
+
+
+we have to route all the new files created in the url.py and views.py pages
+
+To link the differrent pages :
+{% block content%}{% endblock%}
+This is the place holder or the html file which is going
+
+In the file:
+{% extends 'employee/header.html' %}
+{% block content %}
+h1
+{% end block%}
+
+
+To make the use of mysql ( backend):
+The add DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_employee_db ',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306'
+    }
+}
+In the setteings.py
+
+ Then create new database in the XAMPP 
+ Then In the Models.py Create the schemea for the table
+
+ class Student(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField()
+    usn = models.CharField(max_length=20, unique=True)
+    branch = models.CharField(max_length=50)
+    sem = models.IntegerField()
+    course = models.CharField(max_length=50)
+    profile_pic = models.ImageField(upload_to = 'profile/', blank=True, null=True)
+    resume = models.FileField(upload_to= 'resume'/, blank=True, null=True)
+    joining_date = models.DateTimeField(auto_now_add= True)
+
+    def __str__(self):
+        return self.name
+
+
+ while using the files in schema , we have to ask the permission in the setteings
+
+ import os
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+After creating the schema, :
+python manage.py makemigrations
+python manage.py migrate
+
+In the dgango we don't need to create the forms we can make it in the file
+create new file forms.py
+
+from django import forms
+from .models import Employee
+
+class EmployeeJoiningform(forms.ModelForm):
+    class Meta:
+        model = Employee
+        fields = '__all__'\
+
+After this write the logic in views.py
+
+from django.shortcuts import render, redirect, get_object_404
+from.models import EmployeeJoiningormfrom. forms import EmployeeJoiningfrom
+
+#create your views here
+def show_employees(request):
+    employees = Employee.objects.all()
+    return render(request, 'employee/emp_list.html', {'employees_details':employees})
+ 
+
+def create_employee(request):
+    if request.method == 'POST':
+        form = EmployeeJoiningform(request.POST, request.FIELS)
+        if form.is_valid():
+         form.save()
+         return redirect ('employee_list')
+    else:
+        from = EmployeeJoiningform()
+    return render(request, 'employee/emp_form.html', {'form': form})
+
+
+Create New file emp_form.html:
+
+{% extends ' employee/header.html'%}
+{% block content %}
+    <h1> Hellow Students! </h1>
+    <form method ="post" enctype="multipart/form-data">
+     {% csrf_token %}
+     <div class="mb-3">
+            {{form.as_p}}
+    </div>
+    <button type="submit" class="btn btn-success">submit</button>
+    <button type="reset" class="btn btn-danger">cancel</button>
+    </form>
+{% endblock %}
+
+Then in the emp_list create the table, and actions = edit, view, delete 
+using the anchor tags
+Create views.html for views - and add the table th , td for  same table
+
+In the views and urls.py  add pk for primary key also in the emp_form:
+ '<int:pk>/view/'
+
+CORS = Cross-Origin Resource Sharing
+add the CORS_ALLOW_ALL_ORIGINS = True in the settings.py
+
+don't get panic for edit and  you should not create the html files just cahnge in urls, views, header
+sorry for delete create the html page
